@@ -13,108 +13,105 @@ a {
 
 /* BODY */
 body {
-    background: url(img/5.jpg) no-repeat center;
-    background-size: cover;
+    background: url(img/5.jpg) no-repeat center/cover;
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
-    /* ocupa toda a altura da tela */
-    overflow-y: hidden;
-    /* remove scroll horizontal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+    width: 100%;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    padding: 25px 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-/* CONTAINER */
-.container {
-    text-align: center;
-    width: 450px;
-    margin: 60px auto;
-    flex: 1;
-    /* ocupa espaço restante, empurrando o footer para baixo */
-}
-
-/* IMAGENS */
-img {
-    width: 100%;
-}
-
+/* AVATAR */
 img.avatar {
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
-    width: 180px;
-    height: 180px;
-    padding: 3.7px;
     border: 4px solid #0a3c39;
+    object-fit: cover;
+    margin-bottom: 15px;
 }
 
 /* USER INFO */
 .username {
-    margin-top: -0.1rem;
     font-weight: bold;
     color: #161616;
     font-size: 1rem;
+    margin-bottom: 5px;
 }
 
 .subtitle {
     font-weight: normal;
     color: #161616;
     font-size: 0.8rem;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
-/* TITULOS */
+/* TÍTULO */
 h1 {
-    font-size: 32px;
-    margin-top: 24px;
-    margin-bottom: 8px;
+    font-size: 28px;
     font-weight: bold;
+    margin: 15px 0;
 }
 
 /* BOX LINKS */
 .boxlinks {
-    background: #fffffff0;
     width: 100%;
-    margin: auto;
-    padding: 25px 20px 55px 20px;
-    /* reduzi padding inferior para evitar scroll */
-    border: 1px solid #fffffff0;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* espaçamento entre botões */
 }
 
-/* LISTA DE LINKS */
+/* LINKS */
 ul {
     list-style: none;
-    margin: 48px 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
-/* LINK CARD */
 ul li a {
-    height: 53px;
-    margin: 20px;
-    padding: 0 20px;
-    border: 1px solid #fffffff0;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    background: #fffffff0;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0 20px;
     border-radius: 16px;
-    box-shadow: 4px 4px 18px -5px rgb(100 100 200 / 68%);
+    background: #ffffff;
     color: #404040;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 4px 4px 18px -5px rgba(100, 100, 200, 0.68);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 ul li a:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     box-shadow: 6px 10px 20px -5px rgba(100, 100, 200, 0.7);
 }
 
-/* ÍCONES NOS LINKS */
+/* ÍCONES */
 ul li a i {
-    margin-right: 8px;
+    margin-right: 10px;
+    font-size: 1.2rem;
     transition: color 0.3s ease;
 }
 
-/* HOVER ÍCONES POR PLATAFORMA */
+/* HOVER ÍCONES */
 ul li a:hover i.github {
     color: orange;
 }
@@ -144,22 +141,49 @@ ul li a:hover i.instagram {
     font-weight: 400;
     font-size: 12px;
     color: #404040;
-    background: #fffffff0;
     width: 100%;
-    padding: 5px 20px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    box-sizing: border-box;
-}
-
-/* TEXTO DO FOOTER */
-.footer footer .text {
     padding: 10px 0;
-    margin: 0;
+    border-radius: 20px;
     text-align: center;
 }
 
-/* COR DO ÍCONE DO CORAÇÃO */
 .footer footer i {
     color: #c44d4d;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    img.avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .username {
+        font-size: 0.9rem;
+    }
+
+    .subtitle {
+        font-size: 0.75rem;
+        margin-bottom: 15px;
+    }
+
+    ul li a {
+        height: 45px;
+        padding: 0 15px;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+    }
+
+    .footer footer {
+        font-size: 11px;
+        padding: 8px 0;
+    }
 }
